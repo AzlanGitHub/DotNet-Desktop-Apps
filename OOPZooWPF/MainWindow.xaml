@@ -8,14 +8,17 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel Margin="10">
         <TextBlock Text="Welcome to the OOP Zoo!" FontSize="24" FontWeight="Bold" Margin="10,10,300,30"/>
-        <Button Content="View Animals" Width="150" Height="30" Click="ViewAnimals_Click" Margin="10,10,500,10"  />
         <Button Content="Add Animal" Width="150" Height="30" Click="AddAnimal_Click" Margin="10,10,500,10"/>
-        <ListBox Name="AnimalList" Margin="10,10,10,10" Height="200" Width="760">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Name}" FontSize="16"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+
+        <ListView Name="AnimalList" Margin="10" Height="200" Width="760">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="150"/>
+                    <GridViewColumn Header="Typ" DisplayMemberBinding="{Binding Species}" Width="150"/>
+                    <GridViewColumn Header="Alter" DisplayMemberBinding="{Binding Age}" Width="100"/>
+                    <GridViewColumn Header="Lebensraum" DisplayMemberBinding="{Binding Habitat}" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </StackPanel>
 </Window>
