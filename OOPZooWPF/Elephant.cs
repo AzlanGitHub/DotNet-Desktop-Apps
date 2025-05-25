@@ -27,6 +27,6 @@ namespace OOPZooWPF
            Console.WriteLine($"{Name} the {Species} is using its trunk to pick leaves and branches, enjoying a hearty meal of vegetation.");
         }
     }
-    {
-    }
+    
+    
 }
